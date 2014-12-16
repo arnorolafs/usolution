@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">university solution</string>
+    <string name="title_start_activity">StartActivity</string>
+    
+    <string name="email_hint">Email address</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="incorrect_login_toast">Incorrect email/password</string>
+    <string name="new_account_created_toast">Account successfully created</string>
+    
+    <string name="new_account">New Account</string>
+    <string name="first_name_hint">First name</string>
+    <string name="last_name_hint">Last name</string>
+    
+    
+    
+    <string name="usolution_logo">usolution logo</string>
+    <string name="solution_header">solution header</string>
+    
+    <string name="company_logo">Company logo</string>
+    <string name="projects_title">Project title</string>
+    <string name="company_name">Company name</string>
+    
+</resources>
