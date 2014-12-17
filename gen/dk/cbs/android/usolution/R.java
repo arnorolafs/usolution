@@ -1690,9 +1690,12 @@ containing a value of this type.
         public static final int password_field=0x7f090045;
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
+        public static final int project_applyButton=0x7f09004f;
+        public static final int project_descriptionEditText=0x7f09004e;
         public static final int project_list_item_businessLogo=0x7f090043;
         public static final int project_list_item_businessNameTextView=0x7f090042;
         public static final int project_list_item_titleTextView=0x7f090041;
+        public static final int project_titleEditText=0x7f09004d;
         public static final int radio=0x7f09002b;
         public static final int search_badge=0x7f090035;
         public static final int search_bar=0x7f090034;
@@ -1770,7 +1773,8 @@ containing a value of this type.
         public static final int fragment_home=0x7f030018;
         public static final int fragment_login=0x7f030019;
         public static final int fragment_new_account=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int fragment_project=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class menu {
         public static final int start=0x7f0c0000;
@@ -1832,21 +1836,28 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
+        public static final int account_email_already_registered=0x7f0a0017;
         public static final int app_name=0x7f0a0010;
-        public static final int company_logo=0x7f0a001c;
-        public static final int company_name=0x7f0a001e;
+        public static final int apply_button=0x7f0a0025;
+        public static final int company_logo=0x7f0a001d;
+        public static final int company_name=0x7f0a0020;
         public static final int email_hint=0x7f0a0012;
-        public static final int first_name_hint=0x7f0a0018;
+        public static final int first_name_hint=0x7f0a0019;
         public static final int incorrect_login_toast=0x7f0a0015;
-        public static final int last_name_hint=0x7f0a0019;
+        public static final int last_name_hint=0x7f0a001a;
         public static final int login_button=0x7f0a0014;
-        public static final int new_account=0x7f0a0017;
+        public static final int new_account=0x7f0a0018;
         public static final int new_account_created_toast=0x7f0a0016;
         public static final int password_hint=0x7f0a0013;
-        public static final int projects_title=0x7f0a001d;
-        public static final int solution_header=0x7f0a001b;
+        public static final int project_description=0x7f0a001f;
+        public static final int project_description_label=0x7f0a0022;
+        public static final int project_description_test=0x7f0a0024;
+        public static final int project_title=0x7f0a001e;
+        public static final int project_title_label=0x7f0a0021;
+        public static final int project_title_test=0x7f0a0023;
+        public static final int solution_header=0x7f0a001c;
         public static final int title_start_activity=0x7f0a0011;
-        public static final int usolution_logo=0x7f0a001a;
+        public static final int usolution_logo=0x7f0a001b;
     }
     public static final class style {
         /** 

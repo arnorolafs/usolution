@@ -14,7 +14,7 @@
         android:textStyle="bold"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:text="@string/projects_title" />
+        android:text="@string/project_title_label" />
 	
 	<LinearLayout
 	    android:orientation="horizontal"

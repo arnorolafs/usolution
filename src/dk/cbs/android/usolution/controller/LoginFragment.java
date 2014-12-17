@@ -20,6 +20,7 @@ import dk.cbs.android.usolution.model.User;
 import dk.cbs.android.usolution.model.UserDatabase;
 
 public class LoginFragment extends Fragment {
+	private static final String KEY_USER_ARRAY = "user array";
 
 	private EditText mEmailField;
 	private EditText mPasswordField;
@@ -97,6 +98,7 @@ public class LoginFragment extends Fragment {
         mNewAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				
 				newAccount();
 			}
 		});
@@ -106,6 +108,7 @@ public class LoginFragment extends Fragment {
 	}
 	
 	private void newAccount() {
+		
 		// Create new fragment and transaction					
 		Fragment newFragment = new NewAccountFragment();
 		FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -120,7 +123,6 @@ public class LoginFragment extends Fragment {
 	}
 	
 	private void login() {
-
 		if (UserDatabase.checkUser(mUser)) {
 			// Start HomeActivity
 			Intent i = new Intent(getActivity(), HomeActivity.class);

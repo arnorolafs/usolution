@@ -1,5 +1,6 @@
 package dk.cbs.android.usolution.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -127,9 +128,20 @@ public class NewAccountFragment extends Fragment {
 		mAccountNewAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (UserDatabase.checkUser(mUser)) {
+				if (!UserDatabase.checkUser(mUser)) {
 					UserDatabase.addUser(mUser);
-					Toast.makeText(getActivity().getApplicationContext(), R.string.new_account_created_toast, Toast.LENGTH_SHORT).show();
+					Toast.makeText(getActivity().getApplicationContext(), 
+							       R.string.new_account_created_toast, 
+							       Toast.LENGTH_SHORT).show();
+					
+					// Start HomeActivity
+					Intent i = new Intent(getActivity(), HomeActivity.class);
+					startActivity(i);
+				}
+				else {
+					Toast.makeText(getActivity().getApplicationContext(), 
+								   R.string.account_email_already_registered, 
+								   Toast.LENGTH_SHORT).show();
 				}
 			}
 		});

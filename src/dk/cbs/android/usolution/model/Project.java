@@ -7,6 +7,7 @@ public class Project {
 	
 	private String mProjectName;
 	private String mBusinessName;
+	private String mProjectDescription;
 	private String mLogo;
 	
 	public Project() {
@@ -31,6 +32,14 @@ public class Project {
 	
 	public void setBusinessName(String businessName) {
 		mBusinessName = businessName;
+	}
+	
+	public String getProjectDescription() {
+		return mProjectDescription;
+	}
+	
+	public void setProjectDescription(String projectDescription) {
+		mProjectDescription = projectDescription;
 	}
 	
 	public String getLogo() {

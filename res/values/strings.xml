@@ -7,20 +7,35 @@
     <string name="email_hint">Email address</string>
     <string name="password_hint">Password</string>
     <string name="login_button">Login</string>
+    
     <string name="incorrect_login_toast">Incorrect email/password</string>
     <string name="new_account_created_toast">Account successfully created</string>
+    <string name="account_email_already_registered">Account email already registered</string>
     
     <string name="new_account">New Account</string>
     <string name="first_name_hint">First name</string>
     <string name="last_name_hint">Last name</string>
     
     
-    
     <string name="usolution_logo">usolution logo</string>
     <string name="solution_header">solution header</string>
     
     <string name="company_logo">Company logo</string>
-    <string name="projects_title">Project title</string>
+    <string name="project_title">Project title</string>
+    <string name="project_description"></string>
     <string name="company_name">Company name</string>
+    
+    <string name="project_title_label">Project title</string>
+    <string name="project_description_label">Project description</string>
+    
+    <string name="project_title_test"> Technological infrastructure </string>
+    <string name="project_description_test">
+        We are dissatisfied with what we are getting out of our current technological setup and are therefore contemplating changing
+        platforms. Before we do so, we are extremely interested in having our technological infrastructure analyzed from an outside
+        source. Main focus should first and foremost be on improving profitability. In case that this analysis proves that the best/only course of action is to make change, we would appreciate it if the report 
+        had recommendation for different it-solutions.
+    </string>
+    
+    <string name="apply_button">Apply</string>
     
 </resources>

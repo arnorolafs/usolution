@@ -15,14 +15,23 @@ public class ProjectDatabase {
 	private ProjectDatabase(Context appContext) {
 		mAppContext = appContext;
 		mProjects = new ArrayList<Project>();
-
-		for (int i = 0; i < 100; i++) {
-			Project p = new Project();
-			
-			p.setProjectName("Company #" + i);
-			// add user to Database
-			mProjects.add(p);
-		}
+		
+		// create a test project
+		Project test = new Project();
+		
+		// set pre-defined parameters
+		test.setBusinessName("Temp-Team A/S");
+		test.setProjectName("Technological Infrastructure");
+		test.setProjectDescription
+		("We are dissatisfied with what we are getting out of our current technological " +
+		 "setup and are therefore contemplating changing platforms. Before we do so, " +
+		 "we are extremely interested in having our technological infrastructure analyzed " +
+		 "from an outside source. Main focus should first and foremost be on improving profitability. " +
+		 "In case that this analysis proves that the best/only course of action is to make change, " +
+		 "we would appreciate it if the report had recommendation for different it-solutions.");
+		
+		// add user to Database
+		mProjects.add(test);
 	}
 	
 	public static ProjectDatabase get(Context c) {
@@ -40,7 +49,7 @@ public class ProjectDatabase {
 		return mProjects;
 	}
 	
-	public Project getProjects(UUID id) {
+	public Project getProject(UUID id) {
 		for (Project c : mProjects) {
 			if (c.getId().equals(id))
 				return c;
