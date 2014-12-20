@@ -15,7 +15,7 @@ import dk.cbs.android.usolution.R;
 import dk.cbs.android.usolution.model.User;
 import dk.cbs.android.usolution.model.UserDatabase;
 
-public class NewAccountFragment extends Fragment {
+public class CreateNewAccountFragment extends Fragment {
 	
 	private EditText mAccountFirstName;
 	private EditText mAccountLastName;
@@ -34,7 +34,7 @@ public class NewAccountFragment extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.fragment_new_account, parent, false);
+		View v = inflater.inflate(R.layout.fragment_create_new_account, parent, false);
 		
 		mAccountFirstName = (EditText)v.findViewById(R.id.account_firstName);
 		mAccountFirstName.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +131,11 @@ public class NewAccountFragment extends Fragment {
 				if (!UserDatabase.checkUser(mUser)) {
 					UserDatabase.addUser(mUser);
 					Toast.makeText(getActivity().getApplicationContext(), 
-							       R.string.new_account_created_toast, 
+						       R.string.new_account_created_toast,
+						       Toast.LENGTH_SHORT).show();
+
+					Toast.makeText(getActivity().getApplicationContext(), 
+							       "Welcome " + mUser.getFullName(), 
 							       Toast.LENGTH_SHORT).show();
 					
 					// Start HomeActivity
@@ -140,7 +144,7 @@ public class NewAccountFragment extends Fragment {
 				}
 				else {
 					Toast.makeText(getActivity().getApplicationContext(), 
-								   R.string.account_email_already_registered, 
+								   R.string.account_email_already_registered_toast, 
 								   Toast.LENGTH_SHORT).show();
 				}
 			}

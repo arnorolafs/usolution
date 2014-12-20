@@ -1639,11 +1639,11 @@ containing a value of this type.
         public static final int usolution=0x7f020037;
     }
     public static final class id {
-        public static final int account_email=0x7f09004a;
-        public static final int account_firstName=0x7f090048;
-        public static final int account_lastName=0x7f090049;
-        public static final int account_newAccount=0x7f09004c;
-        public static final int account_password=0x7f09004b;
+        public static final int account_email=0x7f090045;
+        public static final int account_firstName=0x7f090043;
+        public static final int account_lastName=0x7f090044;
+        public static final int account_newAccount=0x7f090047;
+        public static final int account_password=0x7f090046;
         public static final int action_bar=0x7f090031;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090030;
@@ -1659,6 +1659,7 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f090020;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090014;
+        public static final int applyForProject=0x7f090042;
         public static final int background=0x7f090040;
         public static final int beginning=0x7f09001b;
         public static final int checkbox=0x7f090029;
@@ -1669,7 +1670,7 @@ containing a value of this type.
         public static final int disableHome=0x7f09000d;
         public static final int dropdown=0x7f09001a;
         public static final int edit_query=0x7f090033;
-        public static final int email_field=0x7f090044;
+        public static final int email_field=0x7f09004b;
         public static final int end=0x7f09001c;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
@@ -1681,21 +1682,22 @@ containing a value of this type.
         public static final int image=0x7f090023;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090025;
-        public static final int login_button=0x7f090046;
+        public static final int login_button=0x7f09004d;
         public static final int middle=0x7f09001d;
         public static final int never=0x7f090017;
-        public static final int new_account=0x7f090047;
+        public static final int new_account=0x7f09004e;
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
-        public static final int password_field=0x7f090045;
+        public static final int password_field=0x7f09004c;
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
-        public static final int project_applyButton=0x7f09004f;
-        public static final int project_descriptionEditText=0x7f09004e;
-        public static final int project_list_item_businessLogo=0x7f090043;
-        public static final int project_list_item_businessNameTextView=0x7f090042;
-        public static final int project_list_item_titleTextView=0x7f090041;
-        public static final int project_titleEditText=0x7f09004d;
+        public static final int projectApplication=0x7f090041;
+        public static final int project_applyButton=0x7f090051;
+        public static final int project_descriptionEditText=0x7f090050;
+        public static final int project_list_item_businessLogoImageView=0x7f09004a;
+        public static final int project_list_item_businessNameTextView=0x7f090049;
+        public static final int project_list_item_titleTextView=0x7f090048;
+        public static final int project_titleEditText=0x7f09004f;
         public static final int radio=0x7f09002b;
         public static final int search_badge=0x7f090035;
         public static final int search_bar=0x7f090034;
@@ -1770,11 +1772,12 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_fragment=0x7f030017;
-        public static final int fragment_home=0x7f030018;
-        public static final int fragment_login=0x7f030019;
-        public static final int fragment_new_account=0x7f03001a;
-        public static final int fragment_project=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int fragment_apply_for_project=0x7f030018;
+        public static final int fragment_create_new_account=0x7f030019;
+        public static final int fragment_home=0x7f03001a;
+        public static final int fragment_login=0x7f03001b;
+        public static final int fragment_project=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int start=0x7f0c0000;
@@ -1836,8 +1839,9 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
-        public static final int account_email_already_registered=0x7f0a0017;
+        public static final int account_email_already_registered_toast=0x7f0a0017;
         public static final int app_name=0x7f0a0010;
+        public static final int application=0x7f0a0026;
         public static final int apply_button=0x7f0a0025;
         public static final int company_logo=0x7f0a001d;
         public static final int company_name=0x7f0a0020;
@@ -1855,7 +1859,7 @@ containing a value of this type.
         public static final int project_title=0x7f0a001e;
         public static final int project_title_label=0x7f0a0021;
         public static final int project_title_test=0x7f0a0023;
-        public static final int solution_header=0x7f0a001c;
+        public static final int solution_drawable=0x7f0a001c;
         public static final int title_start_activity=0x7f0a0011;
         public static final int usolution_logo=0x7f0a001b;
     }

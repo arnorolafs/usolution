@@ -42,11 +42,11 @@ public class Project {
 		mProjectDescription = projectDescription;
 	}
 	
-	public String getLogo() {
+	public String getBusinessLogo() {
 		return mLogo;
 	}
 	
-	public void setLogo(String logo) {
+	public void setBusinessLogo(String logo) {
 		mLogo = logo;
 	}
 }

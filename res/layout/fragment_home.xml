@@ -28,7 +28,7 @@
 	        android:text="@string/company_name" />
 	    
 	    <ImageView
-	        android:id="@+id/project_list_item_businessLogo"
+	        android:id="@+id/project_list_item_businessLogoImageView"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
 	        android:layout_marginLeft="150dp"

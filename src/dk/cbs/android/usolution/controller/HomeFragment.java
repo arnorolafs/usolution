@@ -3,19 +3,27 @@ package dk.cbs.android.usolution.controller;
 import java.util.ArrayList;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import dk.cbs.android.usolution.BuildConfig;
 import dk.cbs.android.usolution.R;
 import dk.cbs.android.usolution.model.Project;
 import dk.cbs.android.usolution.model.ProjectDatabase;
 
 public class HomeFragment extends ListFragment {
 	private ArrayList<Project> mProjects;
+	
+	public static String PACKAGE_NAME;
+	
+	private ImageView mBusinessLogo;
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,8 @@ public class HomeFragment extends ListFragment {
 		
 		ProjectAdapter adapter = new ProjectAdapter(mProjects);
 		setListAdapter(adapter);
+		
+		PACKAGE_NAME = getActivity().getApplicationContext().getPackageName();
 	}
 	
 	@Override
@@ -67,6 +77,14 @@ public class HomeFragment extends ListFragment {
 			TextView businessNameTextView =
 					(TextView)convertView.findViewById(R.id.project_list_item_businessNameTextView);
 			businessNameTextView.setText(p.getBusinessName());
+			
+			
+			String uri = "@drawable/temp_team";
+			int imageResource = getResources().getIdentifier(uri, null, PACKAGE_NAME);
+
+			mBusinessLogo = (ImageView)convertView.findViewById(R.id.project_list_item_businessLogoImageView);
+			Drawable res = getResources().getDrawable(imageResource);
+			mBusinessLogo.setImageDrawable(res);
 			
 			return convertView;
 		}

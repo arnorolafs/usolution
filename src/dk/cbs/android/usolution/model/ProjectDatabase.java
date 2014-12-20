@@ -3,7 +3,6 @@ package dk.cbs.android.usolution.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
-
 import android.content.Context;
 
 public class ProjectDatabase {
@@ -22,6 +21,7 @@ public class ProjectDatabase {
 		// set pre-defined parameters
 		test.setBusinessName("Temp-Team A/S");
 		test.setProjectName("Technological Infrastructure");
+		test.setBusinessLogo("temp_team");
 		test.setProjectDescription
 		("We are dissatisfied with what we are getting out of our current technological " +
 		 "setup and are therefore contemplating changing platforms. Before we do so, " +

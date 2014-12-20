@@ -34,6 +34,10 @@ public class User {
 		mLastName = lastName;
 	}
 	
+	public String getFullName() {
+		return mFirstName + " " + mLastName;
+	}
+	
 	public String getEmail() {
 		return mEmail;
 	}

@@ -98,7 +98,6 @@ public class LoginFragment extends Fragment {
         mNewAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
 				newAccount();
 			}
 		});
@@ -108,18 +107,8 @@ public class LoginFragment extends Fragment {
 	}
 	
 	private void newAccount() {
-		
-		// Create new fragment and transaction					
-		Fragment newFragment = new NewAccountFragment();
-		FragmentTransaction transaction = getFragmentManager().beginTransaction();
-		
-		// Replace whatever is in the fragment_container view with this fragment,
-		// and add the transaction to the back stack
-		transaction.replace(R.id.fragmentContainer, newFragment);
-		transaction.addToBackStack(null);
-						
-		// Commit the transaction
-		transaction.commit();
+		Intent i = new Intent(getActivity(), CreateNewAccountActivity.class);
+		startActivity(i);
 	}
 	
 	private void login() {

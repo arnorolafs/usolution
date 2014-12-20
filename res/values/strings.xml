@@ -10,7 +10,7 @@
     
     <string name="incorrect_login_toast">Incorrect email/password</string>
     <string name="new_account_created_toast">Account successfully created</string>
-    <string name="account_email_already_registered">Account email already registered</string>
+    <string name="account_email_already_registered_toast">Account email already registered</string>
     
     <string name="new_account">New Account</string>
     <string name="first_name_hint">First name</string>
@@ -18,7 +18,7 @@
     
     
     <string name="usolution_logo">usolution logo</string>
-    <string name="solution_header">solution header</string>
+    <string name="solution_drawable">solution header</string>
     
     <string name="company_logo">Company logo</string>
     <string name="project_title">Project title</string>
@@ -37,5 +37,6 @@
     </string>
     
     <string name="apply_button">Apply</string>
+    <string name="application">Application</string>
     
 </resources>
