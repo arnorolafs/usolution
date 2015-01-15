@@ -2,15 +2,16 @@ package dk.cbs.android.usolution.model;
 
 import java.util.UUID;
 
-public class User {
+public class Student {
 	private UUID mId;
 	
 	private String mFirstName;
 	private String mLastName;
 	private String mEmail;
 	private String mPassword;
+	private String mLinkedInProfile;
 	
-	public User() {
+	public Student() {
 		mId = UUID.randomUUID();
 	}
 	
@@ -53,4 +54,13 @@ public class User {
 	public void setPassword(String password) {
 		mPassword = password;
 	}
+
+	public String getLinkedInProfile() {
+		return mLinkedInProfile;
+	}
+
+	public void setLinkedInProfile(String linkedInProfile) {
+		mLinkedInProfile = linkedInProfile;
+	}
+
 }

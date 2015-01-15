@@ -32,6 +32,15 @@ public class ProjectDatabase {
 		
 		// add user to Database
 		mProjects.add(test);
+		
+		for (int i = 1; i <= 100; i++) {
+			Project p = new Project();
+			p.setBusinessName("Business #" + i);
+			p.setProjectName("Project #" + i);
+			p.setBusinessLogo("Logo #" + i);
+			p.setProjectDescription("Something interesting");
+			mProjects.add(p);
+		}
 	}
 	
 	public static ProjectDatabase get(Context c) {

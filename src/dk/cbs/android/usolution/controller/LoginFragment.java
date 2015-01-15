@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -16,7 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import dk.cbs.android.usolution.R;
-import dk.cbs.android.usolution.model.User;
+import dk.cbs.android.usolution.model.Student;
 import dk.cbs.android.usolution.model.UserDatabase;
 
 public class LoginFragment extends Fragment {
@@ -27,14 +26,14 @@ public class LoginFragment extends Fragment {
 	private Button mLoginButton;
 	private TextView mNewAccount;
 	
-	private User mUser;
-	private ArrayList<User> mUsers;
+	private Student mUser;
+	private ArrayList<Student> mUsers;
 	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mUser = new User();
+		mUser = new Student();
 		mUsers = UserDatabase.get(getActivity()).getUsers();
 	}
 
@@ -107,7 +106,7 @@ public class LoginFragment extends Fragment {
 	}
 	
 	private void newAccount() {
-		Intent i = new Intent(getActivity(), CreateNewAccountActivity.class);
+		Intent i = new Intent(getActivity(), StudentOrBusinessActivity.class);
 		startActivity(i);
 	}
 	

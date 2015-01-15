@@ -13,8 +13,17 @@
     <string name="account_email_already_registered_toast">Account email already registered</string>
     
     <string name="new_account">New Account</string>
+    <string name="new_account_hint">New Account</string>
+    
     <string name="first_name_hint">First name</string>
     <string name="last_name_hint">Last name</string>
+    <string name="linkedin_hint">LinkedIn Profile</string>
+    
+    <string name="business_name_hint">Company Name</string>
+    <string name="business_contact_person_hint">Contact Person</string>
+    <string name="business_description_hint">Description</string>
+    <string name="business_website_hint">Website</string>
+    
     
     
     <string name="usolution_logo">usolution logo</string>
@@ -38,5 +47,8 @@
     
     <string name="apply_button">Apply</string>
     <string name="application">Application</string>
+    
+    <string name="business_button">Business</string>
+    <string name="student_button">Student</string>
     
 </resources>

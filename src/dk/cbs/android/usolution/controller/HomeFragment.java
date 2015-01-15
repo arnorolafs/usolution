@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import dk.cbs.android.usolution.BuildConfig;
 import dk.cbs.android.usolution.R;
 import dk.cbs.android.usolution.model.Project;
 import dk.cbs.android.usolution.model.ProjectDatabase;
@@ -79,7 +78,7 @@ public class HomeFragment extends ListFragment {
 			businessNameTextView.setText(p.getBusinessName());
 			
 			
-			String uri = "@drawable/temp_team";
+			String uri = "@drawable/empty";
 			int imageResource = getResources().getIdentifier(uri, null, PACKAGE_NAME);
 
 			mBusinessLogo = (ImageView)convertView.findViewById(R.id.project_list_item_businessLogoImageView);

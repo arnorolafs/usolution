@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/background"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffffff">
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+   		android:layout_height="wrap_content"
+   		android:orientation="vertical" >
+    
 
     <ImageView
         android:layout_width="fill_parent"
@@ -51,12 +57,23 @@
         android:layout_marginRight="20dp"
         android:hint="@string/password_hint" />
     
-    <Button
-        android:id="@+id/account_newAccount"
+   	<EditText
+        android:id="@+id/account_linkedInProfile"
+        android:inputType="textUri"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="@string/new_account" />
+        android:hint="@string/linkedin_hint" />
+    
+    <Button
+        android:id="@+id/account_newStudentAccount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/new_account_hint" />
+    
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

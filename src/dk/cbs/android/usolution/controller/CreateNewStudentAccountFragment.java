@@ -12,29 +12,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import dk.cbs.android.usolution.R;
-import dk.cbs.android.usolution.model.User;
+import dk.cbs.android.usolution.model.Student;
 import dk.cbs.android.usolution.model.UserDatabase;
 
-public class CreateNewAccountFragment extends Fragment {
+public class CreateNewStudentAccountFragment extends Fragment {
 	
 	private EditText mAccountFirstName;
 	private EditText mAccountLastName;
 	private EditText mAccountEmail;
 	private EditText mAccountPassword;
+	private EditText mAccountLinkedInProfile;
 	private Button mAccountNewAccount;
 	
-	private User mUser;
+	private Student mUser;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		mUser = new User();
+		mUser = new Student();
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.fragment_create_new_account, parent, false);
+		View v = inflater.inflate(R.layout.fragment_create_student_new_account, parent, false);
 		
 		mAccountFirstName = (EditText)v.findViewById(R.id.account_firstName);
 		mAccountFirstName.setOnClickListener(new View.OnClickListener() {
@@ -124,7 +125,31 @@ public class CreateNewAccountFragment extends Fragment {
 			}
 		});
 		
-		mAccountNewAccount = (Button)v.findViewById(R.id.account_newAccount);
+		mAccountLinkedInProfile = (EditText)v.findViewById(R.id.account_linkedInProfile);
+		mAccountLinkedInProfile.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				mAccountLinkedInProfile.setHint(null);
+			}
+		});
+		
+		mAccountLinkedInProfile.addTextChangedListener(new TextWatcher() {
+			public void onTextChanged(CharSequence c, int start, int before, int count) {
+				mUser.setLinkedInProfile(c.toString());
+			}
+
+			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+				// action before the EditText field is changed
+			}
+			
+			public void afterTextChanged(Editable c) {
+				// action after the EditText field is changed
+			}
+		});
+		
+		
+		mAccountNewAccount = (Button)v.findViewById(R.id.account_newStudentAccount);
 		mAccountNewAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
