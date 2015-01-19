@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import dk.cbs.android.usolution.R;
+import dk.cbs.android.usolution.model.Business;
 import dk.cbs.android.usolution.model.Student;
 import dk.cbs.android.usolution.model.UserDatabase;
 
@@ -26,15 +27,22 @@ public class LoginFragment extends Fragment {
 	private Button mLoginButton;
 	private TextView mNewAccount;
 	
-	private Student mUser;
-	private ArrayList<Student> mUsers;
+	private Student mStudent;
+	private ArrayList<Student> mStudents;
+	
+	private Business mBusiness;
+	private ArrayList<Business> mBusinesses;
 	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mUser = new Student();
-		mUsers = UserDatabase.get(getActivity()).getUsers();
+
+		mStudent = new Student();
+		mStudents = UserDatabase.get(getActivity()).getStudents();
+		
+		mBusiness = new Business();
+		mBusinesses = UserDatabase.get(getActivity()).getBusinesses();
 	}
 
 	@Override
@@ -51,7 +59,8 @@ public class LoginFragment extends Fragment {
 		
 		mEmailField.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
-				mUser.setEmail(c.toString());
+				mStudent.setEmail(c.toString());
+				mBusiness.setEmail(c.toString());
 			}
 				
 			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
@@ -73,7 +82,8 @@ public class LoginFragment extends Fragment {
 		
 		mPasswordField.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
-				mUser.setPassword(c.toString());
+				mStudent.setPassword(c.toString());
+				mBusiness.setPassword(c.toString());
 			}
 
 			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
@@ -111,9 +121,14 @@ public class LoginFragment extends Fragment {
 	}
 	
 	private void login() {
-		if (UserDatabase.checkUser(mUser)) {
+		if (UserDatabase.checkStudentUser(mStudent)) {
 			// Start HomeActivity
-			Intent i = new Intent(getActivity(), HomeActivity.class);
+			Intent i = new Intent(getActivity(), StudentHomeActivity.class);
+			startActivity(i);
+		}
+		else if (UserDatabase.checkBusinessUser(mBusiness)) {
+			// Start HomeActivity
+			Intent i = new Intent(getActivity(), BusinessHomeActivity.class);
 			startActivity(i);
 		}
 		else {

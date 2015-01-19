@@ -62,5 +62,4 @@ public class Student {
 	public void setLinkedInProfile(String linkedInProfile) {
 		mLinkedInProfile = linkedInProfile;
 	}
-
 }

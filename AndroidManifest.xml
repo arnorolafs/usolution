@@ -35,7 +35,11 @@
 			android:label="@string/app_name">
 		</activity>
         <activity 
-            android:name=".controller.HomeActivity"
+            android:name=".controller.StudentHomeActivity"
+			android:label="@string/app_name">
+		</activity>
+		<activity 
+            android:name=".controller.BusinessHomeActivity"
 			android:label="@string/app_name">
 		</activity>
 	    <activity 

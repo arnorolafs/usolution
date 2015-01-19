@@ -1,5 +1,6 @@
 package dk.cbs.android.usolution.model;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class Project {
@@ -9,6 +10,8 @@ public class Project {
 	private String mBusinessName;
 	private String mProjectDescription;
 	private String mLogo;
+	
+	private ArrayList<Student> mApplicants;
 	
 	public Project() {
 		mId = UUID.randomUUID();
@@ -48,5 +51,13 @@ public class Project {
 	
 	public void setBusinessLogo(String logo) {
 		mLogo = logo;
+	}
+	
+	public ArrayList<Student> getApplicants() {
+		return mApplicants;
+	}
+	
+	public void addApplicant(Student user) {
+		mApplicants.add(user);
 	}
 }

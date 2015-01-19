@@ -71,6 +71,4 @@ public class Business {
 	public void setPassword(String password) {
 		mPassword = password;
 	}
-	
-	
 }

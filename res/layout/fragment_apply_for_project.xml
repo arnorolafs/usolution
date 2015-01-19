@@ -31,7 +31,7 @@
         android:layout_marginRight="20dp"/>
     
     <Button
-        android:id="@+id/applyForProject"
+        android:id="@+id/applyForProjectButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"

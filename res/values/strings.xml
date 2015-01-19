@@ -51,4 +51,8 @@
     <string name="business_button">Business</string>
     <string name="student_button">Student</string>
     
+    <string name="check_projects_button">Check Projects</string>
+    <string name="my_projects_button">My Projects</string>
+    <string name="check_applicants_button">Check Applicants</string>
+    
 </resources>

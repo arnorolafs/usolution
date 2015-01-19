@@ -16,7 +16,7 @@ import dk.cbs.android.usolution.R;
 import dk.cbs.android.usolution.model.Project;
 import dk.cbs.android.usolution.model.ProjectDatabase;
 
-public class HomeFragment extends ListFragment {
+public class StudentHomeFragment extends ListFragment {
 	private ArrayList<Project> mProjects;
 	
 	public static String PACKAGE_NAME;
@@ -63,7 +63,7 @@ public class HomeFragment extends ListFragment {
 			// if you weren't given a view, inflate one
 			if (convertView == null) {
 				convertView = getActivity().getLayoutInflater()
-						.inflate(R.layout.fragment_home, null);
+						.inflate(R.layout.fragment_student_home, null);
 			}
 			
 			// configure the view for this project

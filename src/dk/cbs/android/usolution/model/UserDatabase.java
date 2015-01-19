@@ -7,21 +7,30 @@ import java.util.UUID;
 import android.content.Context;
 
 public class UserDatabase {
-	private static ArrayList<Student> mUsers;
+	private static ArrayList<Student> mStudents;
+	private static ArrayList<Business> mBusinesses;
 	
 	private static UserDatabase sUserDatabase;
 	private Context mAppContext;
 	
 	private UserDatabase(Context appContext) {
 		mAppContext = appContext;
-		mUsers = new ArrayList<Student>();
+		mStudents = new ArrayList<Student>();
+		mBusinesses = new ArrayList<Business>();
 		
 		// make one user and set email/password
 		Student c = new Student();
-		c.setEmail("admin");
-		c.setPassword("admin");
+		c.setEmail("student");
+		c.setPassword("student");
 		// add a user to an array
-		mUsers.add(c);
+		mStudents.add(c);
+		
+		// make one user and set email/password
+		Business b = new Business();
+		b.setEmail("business");
+		b.setPassword("business");
+		// add a user to an array
+		mBusinesses.add(b);
 	}
 	
 	public static UserDatabase get(Context c) {
@@ -31,22 +40,6 @@ public class UserDatabase {
 		return getUserDatabase();
 	}
 	
-	public static void addUser(Student user) {
-		mUsers.add(user);
-	}
-
-	public ArrayList<Student> getUsers() {
-		return mUsers;
-	}
-	
-	public Student getUsers(UUID id) {
-		for (Student c : mUsers) {
-			if (c.getId().equals(id))
-				return c;
-		}
-		return null;
-	}
-
 	public static UserDatabase getUserDatabase() {
 		return sUserDatabase;
 	}
@@ -55,9 +48,52 @@ public class UserDatabase {
 		sUserDatabase = userDatabase;
 	}
 	
-	public static boolean checkUser(Student user) {
-		for (int i = 0; i < mUsers.size(); i++) {
-			if (user.getEmail().equals(mUsers.get(i).getEmail()) && user.getPassword().equals(mUsers.get(i).getPassword())) {
+	public static void addStudent(Student user) {
+		mStudents.add(user);
+	}
+
+	public ArrayList<Student> getStudents() {
+		return mStudents;
+	}
+	
+	public Student getStudents(UUID id) {
+		for (Student c : mStudents) {
+			if (c.getId().equals(id))
+				return c;
+		}
+		return null;
+	}
+	
+	public static void addBusiness(Business user) {
+		mBusinesses.add(user);
+	}
+
+	public ArrayList<Business> getBusinesses() {
+		return mBusinesses;
+	}
+	
+	public Business getBusinesses(UUID id) {
+		for (Business b : mBusinesses) {
+			if (b.getId().equals(id))
+				return b;
+		}
+		return null;
+	}
+	
+	public static boolean checkStudentUser(Student studentUser) {
+		for (int i = 0; i < mStudents.size(); i++) {
+			if (studentUser.getEmail().equals(mStudents.get(i).getEmail()) && 
+				studentUser.getPassword().equals(mStudents.get(i).getPassword())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean checkBusinessUser(Business businessUser) {
+		for (int i = 0; i < mBusinesses.size(); i++) {
+			if (businessUser.getEmail().equals(mBusinesses.get(i).getEmail()) && 
+				businessUser.getPassword().equals(mBusinesses.get(i).getPassword())) {
 				return true;
 			}
 		}

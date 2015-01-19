@@ -12,17 +12,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import dk.cbs.android.usolution.R;
+import dk.cbs.android.usolution.model.Business;
 import dk.cbs.android.usolution.model.Student;
 import dk.cbs.android.usolution.model.UserDatabase;
 
 public class CreateNewStudentAccountFragment extends Fragment {
 	
-	private EditText mAccountFirstName;
-	private EditText mAccountLastName;
-	private EditText mAccountEmail;
-	private EditText mAccountPassword;
-	private EditText mAccountLinkedInProfile;
-	private Button mAccountNewAccount;
+	private EditText mFirstName;
+	private EditText mLastName;
+	private EditText mEmail;
+	private EditText mPassword;
+	private EditText mLinkedInProfile;
+	private Button mNewStudentAccount;
 	
 	private Student mUser;
 	
@@ -37,15 +38,15 @@ public class CreateNewStudentAccountFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.fragment_create_student_new_account, parent, false);
 		
-		mAccountFirstName = (EditText)v.findViewById(R.id.account_firstName);
-		mAccountFirstName.setOnClickListener(new View.OnClickListener() {
+		mFirstName = (EditText)v.findViewById(R.id.account_firstName);
+		mFirstName.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mAccountFirstName.setHint(null);
+				mFirstName.setHint(null);
 			}
 		});
 		
-		mAccountFirstName.addTextChangedListener(new TextWatcher() {
+		mFirstName.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
 				mUser.setFirstName(c.toString());
 			}
@@ -59,15 +60,15 @@ public class CreateNewStudentAccountFragment extends Fragment {
 			}
 		});
 		
-		mAccountLastName = (EditText)v.findViewById(R.id.account_lastName);
-		mAccountLastName.setOnClickListener(new View.OnClickListener() {
+		mLastName = (EditText)v.findViewById(R.id.account_lastName);
+		mLastName.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mAccountLastName.setHint(null);
+				mLastName.setHint(null);
 			}
 		});
 		
-		mAccountLastName.addTextChangedListener(new TextWatcher() {
+		mLastName.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
 				mUser.setLastName(c.toString());
 			}
@@ -81,15 +82,15 @@ public class CreateNewStudentAccountFragment extends Fragment {
 			}
 		});
 		
-		mAccountEmail = (EditText)v.findViewById(R.id.account_email);
-		mAccountEmail.setOnClickListener(new View.OnClickListener() {
+		mEmail = (EditText)v.findViewById(R.id.account_email);
+		mEmail.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mAccountEmail.setHint(null);
+				mEmail.setHint(null);
 			}
 		});
 		
-		mAccountEmail.addTextChangedListener(new TextWatcher() {
+		mEmail.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
 				mUser.setEmail(c.toString());
 			}
@@ -103,15 +104,15 @@ public class CreateNewStudentAccountFragment extends Fragment {
 			}
 		});
 		
-		mAccountPassword = (EditText)v.findViewById(R.id.account_password);
-		mAccountPassword.setOnClickListener(new View.OnClickListener() {
+		mPassword = (EditText)v.findViewById(R.id.account_password);
+		mPassword.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mAccountPassword.setHint(null);
+				mPassword.setHint(null);
 			}
 		});
 		
-		mAccountPassword.addTextChangedListener(new TextWatcher() {
+		mPassword.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
 				mUser.setPassword(c.toString());
 			}
@@ -125,16 +126,16 @@ public class CreateNewStudentAccountFragment extends Fragment {
 			}
 		});
 		
-		mAccountLinkedInProfile = (EditText)v.findViewById(R.id.account_linkedInProfile);
-		mAccountLinkedInProfile.setOnClickListener(new View.OnClickListener() {
+		mLinkedInProfile = (EditText)v.findViewById(R.id.account_linkedInProfile);
+		mLinkedInProfile.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				mAccountLinkedInProfile.setHint(null);
+				mLinkedInProfile.setHint(null);
 			}
 		});
 		
-		mAccountLinkedInProfile.addTextChangedListener(new TextWatcher() {
+		mLinkedInProfile.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
 				mUser.setLinkedInProfile(c.toString());
 			}
@@ -149,12 +150,12 @@ public class CreateNewStudentAccountFragment extends Fragment {
 		});
 		
 		
-		mAccountNewAccount = (Button)v.findViewById(R.id.account_newStudentAccount);
-		mAccountNewAccount.setOnClickListener(new View.OnClickListener() {
+		mNewStudentAccount = (Button)v.findViewById(R.id.account_newStudentAccount);
+		mNewStudentAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (!UserDatabase.checkUser(mUser)) {
-					UserDatabase.addUser(mUser);
+				if (!UserDatabase.checkStudentUser(mUser)) {
+					UserDatabase.addStudent(mUser);
 					Toast.makeText(getActivity().getApplicationContext(), 
 						       R.string.new_account_created_toast,
 						       Toast.LENGTH_SHORT).show();
@@ -164,7 +165,7 @@ public class CreateNewStudentAccountFragment extends Fragment {
 							       Toast.LENGTH_SHORT).show();
 					
 					// Start HomeActivity
-					Intent i = new Intent(getActivity(), HomeActivity.class);
+					Intent i = new Intent(getActivity(), StudentHomeActivity.class);
 					startActivity(i);
 				}
 				else {

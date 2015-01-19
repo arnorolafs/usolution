@@ -18,6 +18,14 @@ import android.widget.Toast;
 public class CreateNewBusinessAccountFragment extends Fragment {
 	private Business mUser;
 	
+	private EditText mBusinessName;
+	private EditText mContactPerson;
+	private EditText mDescription;
+	private EditText mWebsite;
+	private EditText mEmail;
+	private EditText mPassword;
+	private Button mNewBusinessAccount;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,7 +37,49 @@ public class CreateNewBusinessAccountFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.fragment_create_business_new_account, parent, false);
 		
+		mBusinessName = (EditText)v.findViewById(R.id.account_businessName);
+		mBusinessName.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mBusinessName.setHint(null);
+			}
+		});
 		
+		mBusinessName.addTextChangedListener(new TextWatcher() {
+			public void onTextChanged(CharSequence c, int start, int before, int count) {
+				mUser.setName(c.toString());
+			}
+
+			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+				// action before the EditText field is changed
+			}
+			
+			public void afterTextChanged(Editable c) {
+				// action after the EditText field is changed
+			}
+		});
+		
+		mContactPerson = (EditText)v.findViewById(R.id.account_businessContactPerson);
+		mContactPerson.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mContactPerson.setHint(null);
+			}
+		});
+		
+		mContactPerson.addTextChangedListener(new TextWatcher() {
+			public void onTextChanged(CharSequence c, int start, int before, int count) {
+				mUser.setContactPerson(c.toString());
+			}
+
+			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+				// action before the EditText field is changed
+			}
+			
+			public void afterTextChanged(Editable c) {
+				// action after the EditText field is changed
+			}
+		});
 		
 		
 		return v;
