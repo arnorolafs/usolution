@@ -1,6 +1,7 @@
 package dk.cbs.android.usolution.controller;
 
 import dk.cbs.android.usolution.R;
+import dk.cbs.android.usolution.model.DbHelper;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;

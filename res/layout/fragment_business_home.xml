@@ -15,30 +15,21 @@
         android:src="@drawable/usolution" />
 
     <Button
-	        android:id="@+id/checkProjects"
+	        android:id="@+id/viewProjects"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:width="200dp"
 	        android:layout_marginTop="10dp"
 	        android:layout_gravity="center"
-	        android:text="@string/check_projects_button" />
+	        android:text="@string/view_projects_button" />
     
     <Button
-	        android:id="@+id/myProjects"
+	        android:id="@+id/myProject"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:width="200dp"
 	        android:layout_marginTop="10dp"
 	        android:layout_gravity="center"
 	        android:text="@string/my_projects_button" />
-    
-    <Button
-	        android:id="@+id/checkApplicants"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:width="200dp"
-	        android:layout_marginTop="10dp"
-	        android:layout_gravity="center"
-	        android:text="@string/check_applicants_button" />
     
 </LinearLayout>

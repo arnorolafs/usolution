@@ -1639,19 +1639,19 @@ containing a value of this type.
         public static final int usolution=0x7f020037;
     }
     public static final class id {
-        public static final int account_businessContactPerson=0x7f090049;
-        public static final int account_businessDescription=0x7f09004a;
-        public static final int account_businessEmail=0x7f09004c;
-        public static final int account_businessName=0x7f090048;
-        public static final int account_businessPassword=0x7f09004d;
-        public static final int account_businessWebsite=0x7f09004b;
-        public static final int account_email=0x7f090051;
-        public static final int account_firstName=0x7f09004f;
-        public static final int account_lastName=0x7f090050;
-        public static final int account_linkedInProfile=0x7f090053;
-        public static final int account_newBusinessAccount=0x7f09004e;
-        public static final int account_newStudentAccount=0x7f090054;
-        public static final int account_password=0x7f090052;
+        public static final int account_businessContactPerson=0x7f090048;
+        public static final int account_businessDescription=0x7f090049;
+        public static final int account_businessEmail=0x7f09004b;
+        public static final int account_businessName=0x7f090047;
+        public static final int account_businessPassword=0x7f09004c;
+        public static final int account_businessWebsite=0x7f09004a;
+        public static final int account_email=0x7f090050;
+        public static final int account_firstName=0x7f09004e;
+        public static final int account_lastName=0x7f09004f;
+        public static final int account_linkedInProfile=0x7f090052;
+        public static final int account_newBusinessAccount=0x7f09004d;
+        public static final int account_newStudentAccount=0x7f090053;
+        public static final int account_password=0x7f090051;
         public static final int action_bar=0x7f090031;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090030;
@@ -1670,9 +1670,7 @@ containing a value of this type.
         public static final int applyForProjectButton=0x7f090042;
         public static final int background=0x7f090040;
         public static final int beginning=0x7f09001b;
-        public static final int businessAccount=0x7f090046;
-        public static final int checkApplicants=0x7f090045;
-        public static final int checkProjects=0x7f090043;
+        public static final int businessAccount=0x7f090045;
         public static final int checkbox=0x7f090029;
         public static final int collapseActionView=0x7f090015;
         public static final int decor_content_parent=0x7f09002f;
@@ -1695,7 +1693,7 @@ containing a value of this type.
         public static final int list_item=0x7f090025;
         public static final int login_button=0x7f090057;
         public static final int middle=0x7f09001d;
-        public static final int myProjects=0x7f090044;
+        public static final int myProject=0x7f090044;
         public static final int never=0x7f090017;
         public static final int new_account=0x7f090058;
         public static final int none=0x7f09000f;
@@ -1726,12 +1724,16 @@ containing a value of this type.
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
         public static final int split_action_bar=0x7f090004;
-        public static final int studentAccount=0x7f090047;
+        public static final int studentAccount=0x7f090046;
+        public static final int student_firstName=0x7f090060;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
         public static final int title=0x7f090027;
         public static final int up=0x7f090001;
         public static final int useLogo=0x7f090013;
+        public static final int usolution_logo=0x7f090054;
+        public static final int viewProjects=0x7f090043;
+        public static final int viewStudentProfile=0x7f09005f;
         public static final int withText=0x7f090018;
         public static final int wrap_content=0x7f090009;
     }
@@ -1791,9 +1793,13 @@ containing a value of this type.
         public static final int fragment_create_business_new_account=0x7f03001b;
         public static final int fragment_create_student_new_account=0x7f03001c;
         public static final int fragment_login=0x7f03001d;
-        public static final int fragment_project=0x7f03001e;
-        public static final int fragment_student_home=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int fragment_my_project=0x7f03001e;
+        public static final int fragment_project=0x7f03001f;
+        public static final int fragment_project_list=0x7f030020;
+        public static final int fragment_student_home=0x7f030021;
+        public static final int fragment_view_business_profile=0x7f030022;
+        public static final int fragment_view_student_profile=0x7f030023;
+        public static final int support_simple_spinner_dropdown_item=0x7f030024;
     }
     public static final class menu {
         public static final int start=0x7f0c0000;
@@ -1864,8 +1870,6 @@ containing a value of this type.
         public static final int business_description_hint=0x7f0a001f;
         public static final int business_name_hint=0x7f0a001d;
         public static final int business_website_hint=0x7f0a0020;
-        public static final int check_applicants_button=0x7f0a0031;
-        public static final int check_projects_button=0x7f0a002f;
         public static final int company_logo=0x7f0a0023;
         public static final int company_name=0x7f0a0026;
         public static final int email_hint=0x7f0a0012;
@@ -1889,6 +1893,10 @@ containing a value of this type.
         public static final int student_button=0x7f0a002e;
         public static final int title_start_activity=0x7f0a0011;
         public static final int usolution_logo=0x7f0a0021;
+        public static final int viewProfile_button=0x7f0a0033;
+        public static final int viewProjects_button=0x7f0a0032;
+        public static final int view_applicants_button=0x7f0a0031;
+        public static final int view_projects_button=0x7f0a002f;
     }
     public static final class style {
         /** 

@@ -81,6 +81,120 @@ public class CreateNewBusinessAccountFragment extends Fragment {
 			}
 		});
 		
+		mDescription = (EditText)v.findViewById(R.id.account_businessDescription);
+		mDescription.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mDescription.setHint(null);
+			}
+		});
+		
+		mDescription.addTextChangedListener(new TextWatcher() {
+			public void onTextChanged(CharSequence c, int start, int before, int count) {
+				mUser.setDescription(c.toString());
+			}
+
+			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+				// action before the EditText field is changed
+			}
+			
+			public void afterTextChanged(Editable c) {
+				// action after the EditText field is changed
+			}
+		});
+		
+		mWebsite = (EditText)v.findViewById(R.id.account_businessWebsite);
+		mWebsite.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mWebsite.setHint(null);
+			}
+		});
+		
+		mWebsite.addTextChangedListener(new TextWatcher() {
+			public void onTextChanged(CharSequence c, int start, int before, int count) {
+				mUser.setWebsite(c.toString());
+			}
+
+			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+				// action before the EditText field is changed
+			}
+			
+			public void afterTextChanged(Editable c) {
+				// action after the EditText field is changed
+			}
+		});
+		
+		mEmail = (EditText)v.findViewById(R.id.account_businessEmail);
+		mEmail.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mEmail.setHint(null);
+			}
+		});
+		
+		mEmail.addTextChangedListener(new TextWatcher() {
+			public void onTextChanged(CharSequence c, int start, int before, int count) {
+				mUser.setEmail(c.toString());
+			}
+
+			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+				// action before the EditText field is changed
+			}
+			
+			public void afterTextChanged(Editable c) {
+				// action after the EditText field is changed
+			}
+		});
+		
+		mPassword = (EditText)v.findViewById(R.id.account_businessPassword);
+		mPassword.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mPassword.setHint(null);
+			}
+		});
+		
+		mPassword.addTextChangedListener(new TextWatcher() {
+			public void onTextChanged(CharSequence c, int start, int before, int count) {
+				mUser.setEmail(c.toString());
+			}
+
+			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+				// action before the EditText field is changed
+			}
+			
+			public void afterTextChanged(Editable c) {
+				// action after the EditText field is changed
+			}
+		});
+		
+		mNewBusinessAccount = (Button)v.findViewById(R.id.account_newBusinessAccount);
+		mNewBusinessAccount.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (UserDatabase.checkBusinessUser(mUser) < 0) {
+					UserDatabase.addBusiness(mUser);
+					Toast.makeText(getActivity().getApplicationContext(), 
+						       R.string.new_account_created_toast,
+						       Toast.LENGTH_SHORT).show();
+
+					Toast.makeText(getActivity().getApplicationContext(), 
+							       "Welcome " + mUser.getName(), 
+							       Toast.LENGTH_SHORT).show();
+					
+					// Start HomeActivity
+					Intent i = new Intent(getActivity(), BusinessHomeActivity.class);
+					startActivity(i);
+				}
+				else {
+					Toast.makeText(getActivity().getApplicationContext(), 
+								   R.string.account_email_already_registered_toast, 
+								   Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		
 		
 		return v;
 	}

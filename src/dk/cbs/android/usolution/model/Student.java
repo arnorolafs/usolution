@@ -7,9 +7,11 @@ public class Student {
 	
 	private String mFirstName;
 	private String mLastName;
+	private String mLinkedInProfile;
 	private String mEmail;
 	private String mPassword;
-	private String mLinkedInProfile;
+	
+	private Student mStudent;
 	
 	public Student() {
 		mId = UUID.randomUUID();

@@ -25,7 +25,6 @@
     <string name="business_website_hint">Website</string>
     
     
-    
     <string name="usolution_logo">usolution logo</string>
     <string name="solution_drawable">solution header</string>
     
@@ -51,8 +50,11 @@
     <string name="business_button">Business</string>
     <string name="student_button">Student</string>
     
-    <string name="check_projects_button">Check Projects</string>
+    <string name="view_projects_button">View Projects</string>
     <string name="my_projects_button">My Projects</string>
-    <string name="check_applicants_button">Check Applicants</string>
+    <string name="view_applicants_button">View Applicants</string>
+    
+    <string name="viewProjects_button">View Projects</string>
+    <string name="viewProfile_button">View Profile</string>
     
 </resources>

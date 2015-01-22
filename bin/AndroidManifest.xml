@@ -39,6 +39,11 @@
 			android:label="@string/app_name">
 		</activity>
 		<activity 
+            android:name=".controller.ProjectListActivity"
+			android:label="@string/app_name">
+		</activity>
+		
+		<activity 
             android:name=".controller.BusinessHomeActivity"
 			android:label="@string/app_name">
 		</activity>

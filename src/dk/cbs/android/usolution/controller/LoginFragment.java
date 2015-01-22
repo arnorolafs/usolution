@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import dk.cbs.android.usolution.R;
 import dk.cbs.android.usolution.model.Business;
+import dk.cbs.android.usolution.model.DbHelper;
 import dk.cbs.android.usolution.model.Student;
 import dk.cbs.android.usolution.model.UserDatabase;
 
@@ -37,12 +38,14 @@ public class LoginFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		UserDatabase userDatabase = new UserDatabase(getActivity().getApplicationContext());
 
 		mStudent = new Student();
-		mStudents = UserDatabase.get(getActivity()).getStudents();
+		mStudents = userDatabase.get(getActivity()).getStudents();
 		
 		mBusiness = new Business();
-		mBusinesses = UserDatabase.get(getActivity()).getBusinesses();
+		mBusinesses = userDatabase.get(getActivity()).getBusinesses();
 	}
 
 	@Override
@@ -121,13 +124,19 @@ public class LoginFragment extends Fragment {
 	}
 	
 	private void login() {
-		if (UserDatabase.checkStudentUser(mStudent)) {
-			// Start HomeActivity
+		int c = UserDatabase.checkStudentUser(mStudent);
+		int b = UserDatabase.checkBusinessUser(mBusiness);
+		if (c > -1) {
+			// welcome user
+			Toast.makeText(getActivity().getApplicationContext(), "Welcome " + mStudents.get(c).getFullName(), Toast.LENGTH_SHORT).show();
+			// start StudentHomeActivity
 			Intent i = new Intent(getActivity(), StudentHomeActivity.class);
 			startActivity(i);
 		}
-		else if (UserDatabase.checkBusinessUser(mBusiness)) {
-			// Start HomeActivity
+		else if (b > -1) {
+			// welcome user
+			Toast.makeText(getActivity().getApplicationContext(), "Welcome " + mBusinesses.get(b).getContactPerson(), Toast.LENGTH_SHORT).show();
+			// start BusinessHomeActivity
 			Intent i = new Intent(getActivity(), BusinessHomeActivity.class);
 			startActivity(i);
 		}

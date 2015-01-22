@@ -154,7 +154,7 @@ public class CreateNewStudentAccountFragment extends Fragment {
 		mNewStudentAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (!UserDatabase.checkStudentUser(mUser)) {
+				if (UserDatabase.checkStudentUser(mUser) < 0) {
 					UserDatabase.addStudent(mUser);
 					Toast.makeText(getActivity().getApplicationContext(), 
 						       R.string.new_account_created_toast,
