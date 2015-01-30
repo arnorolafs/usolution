@@ -14,14 +14,15 @@ import dk.cbs.android.usolution.model.UserDatabase;
 
 public class StudentProfileFragment extends Fragment {
 	
-	private TextView mFirstName;
+	private TextView mFullName;
 	
-	private ArrayList<Student> mStudents;
 	private Student mStudent;
+	private ArrayList<Student> mStudents;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		UserDatabase userDatabase = new UserDatabase(getActivity().getApplicationContext());
 		mStudents = userDatabase.get(getActivity()).getStudents();
 	}
@@ -29,9 +30,6 @@ public class StudentProfileFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.fragment_view_student_profile, parent, false);
-		
-		mFirstName = (TextView)v.findViewById(R.id.student_firstName);
-		mFirstName.setText(mStudent.getFirstName().toString());
 		
 		return v;
 	}

@@ -32,4 +32,13 @@
 	        android:layout_gravity="center"
 	        android:text="@string/my_projects_button" />
     
+     <Button
+	        android:id="@+id/businessProfile"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:width="200dp"
+	        android:layout_marginTop="10dp"
+	        android:layout_gravity="center"
+	        android:text="@string/business_profile" />
+    
 </LinearLayout>

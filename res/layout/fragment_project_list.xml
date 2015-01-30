@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/background"
@@ -15,25 +16,12 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="@string/project_title_label" />
-	
-	<LinearLayout
-	    android:orientation="horizontal"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content" >
-	    <TextView
-	        android:id="@+id/project_list_item_businessNameTextView"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="3dp"
-	        android:text="@string/company_name" />
-	    
-	    <ImageView
-	        android:id="@+id/project_list_item_businessLogoImageView"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_marginLeft="150dp"
-	        android:contentDescription="@string/company_logo"
-	        android:src="@drawable/empty" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/project_list_item_businessNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="@string/company_name" />
+
 </LinearLayout>

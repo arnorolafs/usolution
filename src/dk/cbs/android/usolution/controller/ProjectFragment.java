@@ -47,6 +47,7 @@ public class ProjectFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.fragment_project, parent, false);
+	
 		
 		mProjectTitleField = (EditText)v.findViewById(R.id.project_titleEditText);
 		mProjectTitleField.setText(mProject.getProjectName());
@@ -55,6 +56,11 @@ public class ProjectFragment extends Fragment {
 		mProjectDescriptionField.setText(mProject.getProjectDescription());
 		
 		mApplyButton = (Button)v.findViewById(R.id.project_applyButton);
+		
+		if (LoginFragment.USER_TYPE == "business") {
+			mApplyButton.setVisibility(View.GONE);
+		}
+		
 		mApplyButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

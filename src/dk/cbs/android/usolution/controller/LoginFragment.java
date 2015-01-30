@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -16,12 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import dk.cbs.android.usolution.R;
 import dk.cbs.android.usolution.model.Business;
-import dk.cbs.android.usolution.model.DbHelper;
 import dk.cbs.android.usolution.model.Student;
 import dk.cbs.android.usolution.model.UserDatabase;
 
 public class LoginFragment extends Fragment {
-	private static final String KEY_USER_ARRAY = "user array";
+	public static String USER_TYPE;
 
 	private EditText mEmailField;
 	private EditText mPasswordField;
@@ -34,10 +35,10 @@ public class LoginFragment extends Fragment {
 	private Business mBusiness;
 	private ArrayList<Business> mBusinesses;
 	
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setRetainInstance(true);
 		
 		UserDatabase userDatabase = new UserDatabase(getActivity().getApplicationContext());
 
@@ -47,7 +48,7 @@ public class LoginFragment extends Fragment {
 		mBusiness = new Business();
 		mBusinesses = userDatabase.get(getActivity()).getBusinesses();
 	}
-
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.fragment_login, parent, false);
@@ -124,21 +125,27 @@ public class LoginFragment extends Fragment {
 	}
 	
 	private void login() {
-		int c = UserDatabase.checkStudentUser(mStudent);
-		int b = UserDatabase.checkBusinessUser(mBusiness);
-		if (c > -1) {
+		int studentIndex = UserDatabase.checkStudentLogin(mStudent);
+		int businessIndex = UserDatabase.checkBusinessLogin(mBusiness);
+		if (studentIndex > -1) {
 			// welcome user
-			Toast.makeText(getActivity().getApplicationContext(), "Welcome " + mStudents.get(c).getFullName(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity().getApplicationContext(), "Welcome " + mStudents.get(studentIndex).getFullName(), Toast.LENGTH_SHORT).show();
 			// start StudentHomeActivity
 			Intent i = new Intent(getActivity(), StudentHomeActivity.class);
 			startActivity(i);
+			
+			USER_TYPE = "student";
 		}
-		else if (b > -1) {
+		else if (businessIndex > -1) {
+			
+			
 			// welcome user
-			Toast.makeText(getActivity().getApplicationContext(), "Welcome " + mBusinesses.get(b).getContactPerson(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity().getApplicationContext(), "Welcome " + mBusinesses.get(businessIndex).getContactPerson(), Toast.LENGTH_SHORT).show();
 			// start BusinessHomeActivity
 			Intent i = new Intent(getActivity(), BusinessHomeActivity.class);
 			startActivity(i);
+			
+			USER_TYPE = "business";
 		}
 		else {
 			Toast.makeText(getActivity().getApplicationContext(), R.string.incorrect_login_toast, Toast.LENGTH_SHORT).show();

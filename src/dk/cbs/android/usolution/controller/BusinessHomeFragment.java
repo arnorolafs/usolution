@@ -13,6 +13,7 @@ public class BusinessHomeFragment extends Fragment {
 	
 	private Button mViewProjects;
 	private Button mMyProject;
+	private Button mBusinessProfile;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,20 @@ public class BusinessHomeFragment extends Fragment {
 			}
 		});
 		
-		mMyProject = (Button)v.findViewById(R.id.viewProjects);
+		mMyProject = (Button)v.findViewById(R.id.myProject);
 		mMyProject.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(getActivity(), MyProjectActivity.class);
+				startActivity(i);
+			}
+		});
+		
+		mBusinessProfile = (Button)v.findViewById(R.id.businessProfile);
+		mBusinessProfile.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getActivity(), BusinessProfileActivity.class);
 				startActivity(i);
 			}
 		});

@@ -11,8 +11,6 @@ public class Student {
 	private String mEmail;
 	private String mPassword;
 	
-	private Student mStudent;
-	
 	public Student() {
 		mId = UUID.randomUUID();
 	}

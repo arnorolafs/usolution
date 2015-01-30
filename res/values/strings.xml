@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">university solution</string>
+    <string name="app_name">usolution</string>
     <string name="title_start_activity">StartActivity</string>
     
     <string name="email_hint">Email address</string>
@@ -56,5 +56,10 @@
     
     <string name="viewProjects_button">View Projects</string>
     <string name="viewProfile_button">View Profile</string>
+    
+    <string name="business_profile">View Business Profile</string>
+    
+    <string name="new_project">New Project</string>
+    <string name="menu_default">Menu</string>
     
 </resources>

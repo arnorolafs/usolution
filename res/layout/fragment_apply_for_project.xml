@@ -11,8 +11,8 @@
         android:layout_width="fill_parent"
         android:layout_height="200dp"
         android:scaleType="fitXY"
-        android:contentDescription="@string/solution_drawable"
-        android:src="@drawable/solution"/>
+        android:contentDescription="@string/usolution_logo"
+        android:src="@drawable/usolution"/>
     
     <TextView
         android:layout_marginTop="10dp"

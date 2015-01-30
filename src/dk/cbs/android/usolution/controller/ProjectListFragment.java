@@ -3,13 +3,13 @@ package dk.cbs.android.usolution.controller;
 import java.util.ArrayList;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import dk.cbs.android.usolution.R;
@@ -21,12 +21,11 @@ public class ProjectListFragment extends ListFragment {
 	
 	public static String PACKAGE_NAME;
 	
-	private ImageView mBusinessLogo;
-	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		getActivity().setTitle(R.string.project_title);
 		mProjects = ProjectDatabase.get(getActivity()).getProjects();
 		
@@ -34,12 +33,6 @@ public class ProjectListFragment extends ListFragment {
 		setListAdapter(adapter);
 		
 		PACKAGE_NAME = getActivity().getApplicationContext().getPackageName();
-	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		((ProjectAdapter)getListAdapter()).notifyDataSetChanged();
 	}
 	
 	public void onListItemClick(ListView l, View v, int position, long id) {
@@ -76,14 +69,6 @@ public class ProjectListFragment extends ListFragment {
 			TextView businessNameTextView =
 					(TextView)convertView.findViewById(R.id.project_list_item_businessNameTextView);
 			businessNameTextView.setText(p.getBusinessName());
-			
-			
-			String uri = "@drawable/empty";
-			int imageResource = getResources().getIdentifier(uri, null, PACKAGE_NAME);
-
-			mBusinessLogo = (ImageView)convertView.findViewById(R.id.project_list_item_businessLogoImageView);
-			Drawable res = getResources().getDrawable(imageResource);
-			mBusinessLogo.setImageDrawable(res);
 			
 			return convertView;
 		}

@@ -45,14 +45,6 @@ public class Project {
 		mProjectDescription = projectDescription;
 	}
 	
-	public String getBusinessLogo() {
-		return mLogo;
-	}
-	
-	public void setBusinessLogo(String logo) {
-		mLogo = logo;
-	}
-	
 	public ArrayList<Student> getApplicants() {
 		return mApplicants;
 	}

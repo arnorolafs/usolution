@@ -157,7 +157,7 @@ public class CreateNewBusinessAccountFragment extends Fragment {
 		
 		mPassword.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before, int count) {
-				mUser.setEmail(c.toString());
+				mUser.setPassword(c.toString());
 			}
 
 			public void beforeTextChanged(CharSequence c, int start, int count, int after) {
@@ -173,7 +173,7 @@ public class CreateNewBusinessAccountFragment extends Fragment {
 		mNewBusinessAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (UserDatabase.checkBusinessUser(mUser) < 0) {
+				if (!UserDatabase.checkForBusinessInformation(mUser)) {
 					UserDatabase.addBusiness(mUser);
 					Toast.makeText(getActivity().getApplicationContext(), 
 						       R.string.new_account_created_toast,
@@ -188,7 +188,7 @@ public class CreateNewBusinessAccountFragment extends Fragment {
 					startActivity(i);
 				}
 				else {
-					Toast.makeText(getActivity().getApplicationContext(), 
+					Toast.makeText(getActivity().getApplicationContext(),
 								   R.string.account_email_already_registered_toast, 
 								   Toast.LENGTH_SHORT).show();
 				}

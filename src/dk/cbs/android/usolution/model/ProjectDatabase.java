@@ -6,6 +6,7 @@ import java.util.UUID;
 import android.content.Context;
 
 public class ProjectDatabase {
+	
 	private static ArrayList<Project> mProjects;
 	
 	private static ProjectDatabase sProjectDatabase;
@@ -21,7 +22,6 @@ public class ProjectDatabase {
 		// set pre-defined parameters
 		test.setBusinessName("Temp-Team A/S");
 		test.setProjectName("Technological Infrastructure");
-		test.setBusinessLogo("temp_team");
 		test.setProjectDescription
 		("We are dissatisfied with what we are getting out of our current technological " +
 		 "setup and are therefore contemplating changing platforms. Before we do so, " +
@@ -37,7 +37,6 @@ public class ProjectDatabase {
 			Project p = new Project();
 			p.setBusinessName("Business #" + i);
 			p.setProjectName("Project #" + i);
-			p.setBusinessLogo("Logo #" + i);
 			p.setProjectDescription("Something interesting");
 			mProjects.add(p);
 		}

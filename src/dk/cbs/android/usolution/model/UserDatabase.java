@@ -3,8 +3,11 @@ package dk.cbs.android.usolution.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import dk.cbs.android.usolution.R;
+
 
 import android.content.Context;
+import android.widget.Toast;
 
 public class UserDatabase {
 	private static ArrayList<Student> mStudents;
@@ -37,7 +40,7 @@ public class UserDatabase {
 		mBusinesses.add(b);
 	}
 	
-	public UserDatabase get(Context c) {
+	public static UserDatabase get(Context c) {
 		if (getUserDatabase() == null) {
 			setUserDatabase(new UserDatabase(c.getApplicationContext()));
 		}
@@ -60,9 +63,9 @@ public class UserDatabase {
 		return mStudents;
 	}
 	
-	public static Student getStudents(int i) {
+	public static Student getStudent(UUID id) {
 		for (Student c : mStudents) {
-			if (c.getId().equals(i))
+			if (c.getId().equals(id))
 				return c;
 		}
 		return null;
@@ -76,7 +79,7 @@ public class UserDatabase {
 		return mBusinesses;
 	}
 	
-	public Business getBusinesses(UUID id) {
+	public Business getBusiness(UUID id) {
 		for (Business b : mBusinesses) {
 			if (b.getId().equals(id))
 				return b;
@@ -84,7 +87,7 @@ public class UserDatabase {
 		return null;
 	}
 	
-	public static int checkStudentUser(Student studentUser) {
+	public static int checkStudentLogin(Student studentUser) {
 		for (int i = 0; i < mStudents.size(); i++) {
 			if (studentUser.getEmail().equals(mStudents.get(i).getEmail()) && 
 				studentUser.getPassword().equals(mStudents.get(i).getPassword())) {
@@ -94,7 +97,7 @@ public class UserDatabase {
 		return -1;
 	}
 	
-	public static int checkBusinessUser(Business businessUser) {
+	public static int checkBusinessLogin(Business businessUser) {
 		for (int i = 0; i < mBusinesses.size(); i++) {
 			if (businessUser.getEmail().equals(mBusinesses.get(i).getEmail()) && 
 				businessUser.getPassword().equals(mBusinesses.get(i).getPassword())) {
@@ -102,5 +105,23 @@ public class UserDatabase {
 			}
 		}
 		return -1;
+	}
+	
+	public static boolean checkForStudentInformation (Student studentUser) {
+		for (int i = 0; i < mStudents.size(); i++) {
+			if (studentUser.getEmail().equals(mStudents.get(i).getEmail())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean checkForBusinessInformation (Business businessUser) {
+		for (int i = 0; i < mBusinesses.size(); i++) {
+			if (businessUser.getEmail().equals(mBusinesses.get(i).getEmail())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

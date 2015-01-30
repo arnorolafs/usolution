@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import dk.cbs.android.usolution.R;
-import dk.cbs.android.usolution.model.Business;
 import dk.cbs.android.usolution.model.Student;
 import dk.cbs.android.usolution.model.UserDatabase;
 
@@ -154,7 +153,7 @@ public class CreateNewStudentAccountFragment extends Fragment {
 		mNewStudentAccount.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (UserDatabase.checkStudentUser(mUser) < 0) {
+				if (!UserDatabase.checkForStudentInformation(mUser)) {
 					UserDatabase.addStudent(mUser);
 					Toast.makeText(getActivity().getApplicationContext(), 
 						       R.string.new_account_created_toast,

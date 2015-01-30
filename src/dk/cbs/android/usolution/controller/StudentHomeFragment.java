@@ -1,5 +1,7 @@
 package dk.cbs.android.usolution.controller;
 
+import java.util.UUID;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,7 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import dk.cbs.android.usolution.R;
+import dk.cbs.android.usolution.model.Student;
+import dk.cbs.android.usolution.model.UserDatabase;
 
 public class StudentHomeFragment extends Fragment {
 	private Button mViewProjects;
